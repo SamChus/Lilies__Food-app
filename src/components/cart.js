@@ -4,7 +4,7 @@ import icon4 from "../assets/dash-4.svg";
 import Checkout from "./checkout";
 
 Modal.setAppElement("#root");
-const Cart = ({ cartItem, handleDelete, count }) => {
+const Cart = ({ cartItem, handleDelete, count}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   
@@ -27,6 +27,8 @@ const Cart = ({ cartItem, handleDelete, count }) => {
             right: 0,
             bottom: 0,
             backgroundColor: "#C4C4C46B",
+            zIndex: 999,
+
           },
           content: {
             position: "absolute",

@@ -7,9 +7,9 @@ const FoodCard = ({
   handleClick,
   handleDetails,
   details,
+  count,
   handleIncrement,
   handleDecrement,
-  count,
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -53,6 +53,7 @@ const FoodCard = ({
             right: 0,
             bottom: 0,
             backgroundColor: "#C4C4C46B",
+            zIndex: 999,
           },
           content: {
             position: "absolute",
@@ -75,7 +76,7 @@ const FoodCard = ({
               <div className="details__start">
                 <img src={item.image} alt="details" />
                 <h3>{item.name}</h3>
-                <p>{item.content}</p>
+                <p>{item.main}</p>
               </div>
               <div className="flex--box details__center">
                 <p>NGN 2000</p>
@@ -84,15 +85,15 @@ const FoodCard = ({
               </div>
               <div className="flex--box details__footer">
                 <Counter
-                  handleIncrement={handleIncrement}
-                  handleDecrement={handleDecrement}
                   item={item}
                   count={count}
+                  handleIncrement={handleIncrement}
+                  handleDecrement={handleDecrement}
                 />
                 <button
                   onClick={() => onClick(item)}
-                  className="btn"
-                  disabled={count === 0 ? "disabled" : null}
+                  className="btn btn-lg p-2"
+                  disabled={item.count <= 0 ? "disabled" : null}
                 >
                   Add to cart
                 </button>

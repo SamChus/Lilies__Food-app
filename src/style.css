@@ -165,11 +165,11 @@ p {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .grid--12{
+  .grid--12 {
     display: flex;
   }
 
-  .grid--1x3L{
+  .grid--1x3L {
     grid-template-columns: repeat(3, 1fr);
     white-space: nowrap;
     width: 100%;
@@ -455,7 +455,7 @@ p {
 }
 
 .login__input input {
-  color: #333;
+  color: #fff;
   display: block;
   width: 120%;
   margin: 34px 0;
@@ -465,7 +465,6 @@ p {
   outline: none;
   border-radius: 7px;
   line-height: 33px;
-  
 }
 
 .login__input input::placeholder {
@@ -485,13 +484,13 @@ p {
   background: var(--color-primary);
 }
 
-.login__footer{
+.login__footer {
   width: 120%;
   display: flex;
   justify-content: space-between;
 }
 
-.login__footer a{
+.login__footer a {
   padding-top: 20px;
   font-size: 12px;
   color: rgb(141, 135, 135);
@@ -532,7 +531,6 @@ p {
   }
 
   .login__input input {
-
     color: #333;
   }
 
@@ -610,14 +608,14 @@ p {
 
 /* Dashboard */
 .dashboard {
-  padding: 44px 10px 25px 90px;
-  
+  padding: 44px 10px 25px 109px;
 }
 
 .dash__greeting {
   max-width: 80px;
   margin: 0 auto;
 }
+
 
 .dash__sidenav {
   position: fixed;
@@ -627,12 +625,21 @@ p {
   background: #fbfbfb;
   height: 100vh;
   padding: 44px 24px;
+  z-index: 1;
 }
 
-@media screen and (min-width: 668px) {
+@media screen and (max-width: 360px) {
+  .dashboard {
+    padding: 44px 10px 25px 115px;
+  }
+  .dash__sidenav {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 425px) {
   .dashboard {
     padding: 44px 20px 25px 270px;
-    
   }
 
   .dash__sidenav {
@@ -647,6 +654,10 @@ p {
 
   .card {
     width: 230px;
+  }
+
+  .grid.all__card {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
@@ -679,7 +690,7 @@ p {
   cursor: pointer;
 }
 
-.dash__btn:hover{
+.dash__btn:hover {
   background: #efefef;
   width: 100%;
   border-radius: 12px;
@@ -720,13 +731,13 @@ p {
 }
 
 /* Card */
-.grid.all__card{
+.grid.all__card {
   justify-content: end;
   gap: 25px;
 }
 
 .card {
-  width: calc(202px + 2px);
+  width: calc(202px + 12px);
   border: 0.3px solid #00302e68;
   padding: 30px;
   text-align: center;
@@ -763,7 +774,7 @@ p {
 .card button {
   cursor: pointer;
   background: transparent;
-  border: 1px solid #06e775 ;
+  border: 1px solid #06e775;
   outline: none !important;
   font-size: 13px;
   font-weight: 500;
@@ -772,7 +783,7 @@ p {
   border-radius: 6px;
 }
 
-.card button:hover{
+.card button:hover {
   background: #06e775;
   color: #fff;
   border: 0 !important;
@@ -810,7 +821,7 @@ p {
   font-weight: 600;
 }
 
-.cart__container h6{
+.cart__container h6 {
   font-weight: 600;
   font-size: 14px;
 }
@@ -827,53 +838,49 @@ p {
 }
 
 /* Details */
-.details__start{
+.details__start {
   text-align: center;
 }
 
-.details__start img{
+.details__start img {
   width: 130px;
 }
 
-.details__start h3{
+.details__start h3 {
   color: var(--color-primary);
   font-weight: 600;
   margin-top: 20px;
 }
 
-.details__start p{
+.details__start p {
   line-height: 1.4;
   font-size: 14px;
   color: #707070;
 }
 
-.flex--box.details__center{
- justify-content: space-around;
- color: var(--color-primary);
- font-weight: 600;
- 
+.flex--box.details__center {
+  justify-content: space-around;
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
-.flex--box.details__footer{
+.flex--box.details__footer {
   margin: 15px calc(10% - 2%);
 }
 
-@media screen and (max-width:660px) {
-  .flex--box.details__center{
+@media screen and (max-width: 660px) {
+  .flex--box.details__center {
     display: block;
     text-align: center;
   }
 
-  .flex--box.details__footer{
+  .flex--box.details__footer {
     display: block;
     text-align: center;
-
   }
 }
 
-
-
-.details__footer .btn{
+.details__footer .btn {
   padding: 3px 15px;
   color: #fff;
   background: var(--color-primary);
@@ -882,21 +889,20 @@ p {
   cursor: pointer;
 }
 
-.details__footer .btn:hover{
+.details__footer .btn:hover {
   background: #064e4b;
 }
 
 /* Counter */
 
-.counter{
+.counter {
   display: flex;
   align-items: center;
   width: 50px;
-  
 }
 
-.counter button{
-  padding: 3px 10px;
+.counter button {
+  padding: 3px 9px;
   color: var(--color-primary);
   background: var(--color-buuton);
   border: 0;
@@ -904,11 +910,11 @@ p {
   font-size: 30px;
   margin: 5px;
 }
-.counter button:first-of-type{
+.counter button:first-of-type {
   padding: 3px 13px;
 }
 
-.counter p{
+.counter p {
   width: 100%;
   font-size: 15px;
   margin: 0 10px;
@@ -916,13 +922,12 @@ p {
   color: var(--color-primary);
 }
 
-
 /* Checkout */
-.checkout{
+.checkout {
   padding: 50px 0;
 }
 
-.checkout__btn{
+.checkout__btn {
   width: 100%;
   margin: auto;
   border: 0;
@@ -934,7 +939,7 @@ p {
   font-weight: 600;
 }
 
-.checkout h3{
+.checkout h3 {
   color: var(--color-primary);
   font-weight: 600;
 }
@@ -952,7 +957,7 @@ p {
   line-height: 33px;
 }
 
-.checkout__input input:last-of-type{
+.checkout__input input:last-of-type {
   margin-bottom: 70px;
 }
 
